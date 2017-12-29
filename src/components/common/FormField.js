@@ -53,15 +53,15 @@ export default class FormField extends React.Component {
   }
 }
 
-// prop checks
-FormField.propTypes = {
-  meta: PropTypes.object,
-  input: PropTypes.object,
-  theme: PropTypes.string,  // 2col (default), etc
-  doValidate: PropTypes.bool, // true or false
-  label: PropTypes.any,  // the field text or a react component if we have html inside (empty string by default)
-  componentClass: PropTypes.string, // input (by default), textarea, select
-  type: PropTypes.string,   // input type: text (by default), password
-  placeholder: PropTypes.string,    // input placeholder (empty string by default)
-  className: PropTypes.string,  // the class name (empty string by default)
-}
+// // prop checks
+// FormField.propTypes = {
+//   meta: PropTypes.object,
+//   input: PropTypes.object,
+//   theme: PropTypes.string,  // 2col (default), etc
+//   doValidate: PropTypes.bool, // true or false
+//   label: PropTypes.any,  // the field text or a react component if we have html inside (empty string by default)
+//   componentClass: PropTypes.string, // input (by default), textarea, select
+//   type: PropTypes.string,   // input type: text (by default), password
+//   placeholder: PropTypes.string,    // input placeholder (empty string by default)
+//   className: PropTypes.string,  // the class name (empty string by default)
+// }

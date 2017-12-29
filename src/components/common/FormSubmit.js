@@ -25,11 +25,11 @@ export default class FormSubmit extends React.Component {
   }
 }
 
-// prop checks
-FormSubmit.propTypes = {
-  error: PropTypes.string,  // redux-form general `_error` message
-  invalid: PropTypes.bool,  // redux-form invalid prop
-  submitting: PropTypes.bool,   // redux-form invalid submitting
-  buttonSaveLoading: PropTypes.string, // save button loading text, default is "Saving..."
-  buttonSave: PropTypes.string,    // save button text, default is "Save"
-};
+// // prop checks
+// FormSubmit.propTypes = {
+//   error: PropTypes.string,  // redux-form general `_error` message
+//   invalid: PropTypes.bool,  // redux-form invalid prop
+//   submitting: PropTypes.bool,   // redux-form invalid submitting
+//   buttonSaveLoading: PropTypes.string, // save button loading text, default is "Saving..."
+//   buttonSave: PropTypes.string,    // save button text, default is "Save"
+// };
