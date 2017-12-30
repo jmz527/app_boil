@@ -1,4 +1,5 @@
 .idea/
 node_modules/
-public/js/
-public/css/
+
+build/js/
+build/css/
