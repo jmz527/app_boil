@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   entry: [
     // http://gaearon.github.io/react-hot-loader/getstarted/
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
     'babel-polyfill',
     __dirname + '/src/index.js'
@@ -16,6 +16,7 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
+  mode: 'production',
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
@@ -23,7 +24,7 @@ module.exports = {
     },
   },
   module: {
-    loaders:[
+    rules:[
       {
         test: /\.js$/,
         exclude: /(node_modules)/,

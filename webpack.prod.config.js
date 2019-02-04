@@ -42,11 +42,11 @@ module.exports.plugins.push(
 );
 
 // export css to a separate file
-module.exports.module.loaders[1] = {
+module.exports.module.rules[1] = {
   test: /\.less$/,
   loader: ExtractTextPlugin.extract('css-loader!less-loader')
 };
-module.exports.module.loaders[2] = {
+module.exports.module.rules[2] = {
   test: /\.scss$/,
   loader: ExtractTextPlugin.extract('css-loader!sass-loader'),
 };
