@@ -1,0 +1,34 @@
+// Main Imports
+import React from 'react';
+import PropTypes from 'prop-types';
+
+// Custom Imports
+import Aux from '~/hoc/Aux';
+import Navigation from '~/components/Navigation';
+import UserBar from '~/components/UserBar';
+
+// Style
+import './index.scss';
+
+const layout = (props) => (
+  <Aux className='layout'>
+    <nav className='navigation'>
+      <Navigation />
+    </nav>
+    <hr />
+    <UserBar {...props} />
+    <hr />
+    <main className='main'>
+      { props.children }
+    </main>
+  </Aux>
+);
+layout.propTypes = {
+  children: PropTypes.object,
+  loginSuccess: PropTypes.bool,
+  currentUser: PropTypes.object,
+  authorizeUserSuccess: PropTypes.func,
+  authorizeUserFailure: PropTypes.func
+};
+
+export default layout;

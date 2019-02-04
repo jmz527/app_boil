@@ -1,14 +1,27 @@
-import React from "react";
-import ReactDOM from "react-dom";
+// Main Imports
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import BasicExample from "./js/basic_router.js";
-// Taken from here:
-// https://reacttraining.com/react-router/web/example/basic
+// Custom Imports
+import store from './store';
+import App from './containers/app.js';
 
-import "./css/style.css";
-import "./css/style.scss";
+// Style Imports
+import './index.css';
+import './index.scss';
 
-ReactDOM.render(
-	<BasicExample />,
-	document.getElementById("root")
+const app = (
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
+
+const rootSelector = document.getElementById('root');
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(app, rootSelector);
+});
