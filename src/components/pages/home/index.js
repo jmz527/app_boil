@@ -2,12 +2,29 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+// Custom Imports
+import BuggyCounter from '~/components/BuggyCounter';
+import ErrorBoundary from '~/hoc/ErrorBoundary';
+
 // Style Imports
 // import './index.scss';
 
 const homePage = () => (
   <div className='homePage'>
     <h2>Home</h2>
+
+    {/* BuggyCounter without ErrorBoundary */}
+    <div style={{ position: 'relative', display: 'inline-block', width: '50%' }}>
+      <label>BuggyCounter without ErrorBoundary</label>
+      <BuggyCounter />
+    </div>
+
+    {/* BuggyCounter with ErrorBoundary */}
+    <div style={{ position: 'relative', display: 'inline-block', width: '50%' }}>
+      <label>BuggyCounter with ErrorBoundary</label>
+      <ErrorBoundary><BuggyCounter /></ErrorBoundary>
+    </div>
+
   </div>
 );
 
