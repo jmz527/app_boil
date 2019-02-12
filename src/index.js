@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 // Custom Imports
 import store from './store';
 import App from './containers/app.js';
+import ErrorBoundary from '~/hoc/ErrorBoundary';
 
 // Style Imports
 import './index.css';
@@ -15,7 +16,7 @@ import './index.scss';
 const app = (
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <ErrorBoundary><App /></ErrorBoundary>
     </BrowserRouter>
   </Provider>
 );
