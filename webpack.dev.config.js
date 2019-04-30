@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-module.exports = require('./webpack.config.js'); // inherit from the main config file
+module.exports = require('./webpack.config.js');    // inherit from the main config file
 
 // disable the hot reload
 module.exports.entry = [
@@ -14,22 +14,29 @@ module.exports.devServer = {
   contentBase: __dirname + '/build',
 };
 
-// export the html template from public dir
-module.exports.plugins.push(
-  new HtmlWebpackPlugin({
-    template: '!!html-loader!public/index_template.html'
-  })
-);
+// export the html template from src/assets dir
+module.exports.plugins[2] = new HtmlWebpackPlugin({
+  title: 'Dev template',
+  template: '!!html-loader!src/assets/index.ejs',
+  minify: false,
+  hash: false,
+  cache: true
+});
 
 // export css to a separate file
-module.exports.module.rules[1] = {
-  test: /\.less$/,
-  loader: ExtractTextPlugin.extract('css-loader!less-loader')
-};
-module.exports.module.rules[2] = {
+module.exports.module.loaders[1] = {
   test: /\.scss$/,
   loader: ExtractTextPlugin.extract('css-loader!sass-loader')
 };
+module.exports.module.loaders[2] = {
+  test: /\.css$/,
+  loader: ExtractTextPlugin.extract('css-loader')
+};
+
 module.exports.plugins.push(
   new ExtractTextPlugin('main.css')
 );
+
+// Note: there is a known issue with html-webpack-plugin regarding the generated link tag not including the type="text/css" metadata:
+// "Refused to apply style from 'http://localhost:8080/main.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+// https://github.com/jantimon/html-webpack-plugin/issues/726

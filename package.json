@@ -4,7 +4,7 @@
   "description": "basic react redux boilerplate",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --inline --hot --history-api-fallback --host 0.0.0.0 --port 8080 --open",
+    "start-dev": "webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 7070 --open",
     "build-dev": "webpack --config webpack.dev.config.js",
     "build-prod": "webpack -p --config webpack.prod.config.js",
     "lint": "./node_modules/.bin/eslint src/**/*.js --ignore-pattern node_modules/",
@@ -24,14 +24,6 @@
     {
       "name": "James Rutledge",
       "email": "jarutledge2@gmail.com"
-    },
-    {
-      "name": "Edouard Barthelemy",
-      "email": "edouard@imbrex.io"
-    },
-    {
-      "name": "Brock Haugen",
-      "email": "brock@haugen.io"
     }
   ],
   "license": "ISC",
@@ -49,13 +41,14 @@
     "babel-register": "^6.26.0",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
+    "ejs": "^2.6.1",
+    "ejs-loader": "^0.3.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.14.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-react": "^7.5.1",
-    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
-    "file-loader": "^1.1.11",
+    "extract-text-webpack-plugin": "^3.0.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
@@ -66,16 +59,13 @@
     "redux-logger": "^3.0.6",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
-    "url-loader": "^1.1.1",
-    "webpack": "^4.0.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": ">=3.1.11"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "connect-history-api-fallback": "^1.5.0",
-    "crypto-js": "^3.1.9-1",
-    "dotenv-webpack": "^1.5.7",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
