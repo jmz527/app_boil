@@ -4,14 +4,6 @@ homemade boilerplate for React/Redux apps
 
 # Description
 
-As developers, we wanted to be able to setup a brand new app and get up & running at the speed of 
-light, while keeping the high quality standards that are ours. We also wanted to give the 
-opportunity to new developers to get easily up-to-speed with our way of crafting software. 
-Therefore, we needed a React Boilerplate to start from, whenever we needed to build a piece of 
-Front-End.
-
-Therefore, we designed & developed with consensus an ultimate boilerplate with examples for our 
-Front-End applications.
 
 # Technologies Used:
 
@@ -90,7 +82,6 @@ yarn test
 ## Authors
 
 * **James Rutledge** - *Initial work* - [James Rutledge](https://github.com/jmz527)
-* **Edouard Barthelemy** - *Extended version* - [Edouard Barthelemy](https://github.com/edoubart)
 
 ## License
 

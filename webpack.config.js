@@ -1,7 +1,19 @@
-const webpack = require('webpack');
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// console.log(process.env);
+
+// if (argv.mode === 'development') {
+//   console.log('development');
+//   // config.devtool = 'source-map';
+// }
+
+// if (argv.mode === 'production') {
+//   console.log('production');
+//   // ...
+// }
 
 module.exports = {
   entry: [
@@ -55,6 +67,7 @@ module.exports = {
   },
   devServer: {
     contentBase: __dirname + '/public',
+    // hot: true
   },
   plugins: [
     new CleanWebpackPlugin(['*.html', '*.css', '*.js'], {
@@ -62,6 +75,7 @@ module.exports = {
       verbose: true,
       dry: false, // true for simulation
     }),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
         eslint: {
