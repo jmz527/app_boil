@@ -3,22 +3,12 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// console.log(process.env);
-
-// if (argv.mode === 'development') {
-//   console.log('development');
-//   // config.devtool = 'source-map';
-// }
-
-// if (argv.mode === 'production') {
-//   console.log('production');
-//   // ...
-// }
+// http://gaearon.github.io/react-hot-loader/getstarted/
+// https://github.com/jtangelder/sass-loader
 
 module.exports = {
   entry: [
-    // http://gaearon.github.io/react-hot-loader/getstarted/
-    'webpack-dev-server/client?http://localhost:7070',
+    'webpack-dev-server/client?http://0.0.0.0:7070',
     'webpack/hot/only-dev-server',
     'babel-polyfill',
     __dirname + '/src/index.js'
@@ -29,6 +19,11 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
@@ -36,14 +31,13 @@ module.exports = {
     },
   },
   module: {
-    loaders:[
+    rules: [
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
         loaders: ['react-hot-loader/webpack', 'babel-loader', 'eslint-loader'],
       },
       {
-        // https://github.com/jtangelder/sass-loader
         test: /\.scss$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
@@ -60,22 +54,20 @@ module.exports = {
           evaluate : '\\[\\[(.+?)\\]\\]'
         }
       },
-    ],
+    ]
   },
   node: {
     fs: 'empty'
   },
   devServer: {
     contentBase: __dirname + '/public',
-    // hot: true
   },
   plugins: [
-    new CleanWebpackPlugin(['*.html', '*.css', '*.js'], {
+    new CleanWebpackPlugin({
       root: __dirname + '/build',
       verbose: true,
       dry: false, // true for simulation
     }),
-    // new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
         eslint: {

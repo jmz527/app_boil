@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = require('./webpack.config.js');    // inherit from the main config file
 
 // module.exports.mode = 'development';
@@ -25,19 +25,19 @@ module.exports.plugins[2] = new HtmlWebpackPlugin({
   cache: true
 });
 
-// export css to a separate file
-module.exports.module.loaders[1] = {
-  test: /\.scss$/,
-  loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-};
-module.exports.module.loaders[2] = {
-  test: /\.css$/,
-  loader: ExtractTextPlugin.extract('css-loader')
-};
+// // export css to a separate file
+// module.exports.module.rules[1] = {
+//   test: /\.scss$/,
+//   loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+// };
+// module.exports.module.rules[2] = {
+//   test: /\.css$/,
+//   loader: ExtractTextPlugin.extract('css-loader')
+// };
 
-module.exports.plugins.push(
-  new ExtractTextPlugin('main.css')
-);
+// module.exports.plugins.push(
+//   new ExtractTextPlugin('main.css')
+// );
 
 // Note: there is a known issue with html-webpack-plugin regarding the generated link tag not including the type="text/css" metadata:
 // "Refused to apply style from 'http://localhost:8080/main.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled."

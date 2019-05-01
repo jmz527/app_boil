@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = require('./webpack.config.js');    // inherit from the main config file
 
 // module.exports.mode = 'production';
@@ -25,15 +25,15 @@ module.exports.plugins.push(
   })
 );
 
-// compress the js file
-module.exports.plugins.push(
-  new webpack.optimize.UglifyJsPlugin({
-    comments: false,
-    compressor: {
-      warnings: false
-    }
-  })
-);
+// // compress the js file
+// module.exports.plugins.push(
+//   new webpack.optimize.UglifyJsPlugin({
+//     comments: false,
+//     compressor: {
+//       warnings: false
+//     }
+//   })
+// );
 
 // export the html template from src/assets dir
 module.exports.plugins[2] = new HtmlWebpackPlugin({
@@ -44,16 +44,16 @@ module.exports.plugins[2] = new HtmlWebpackPlugin({
   cache: true
 });
 
-// export css to a separate file
-module.exports.module.loaders[1] = {
-  test: /\.scss$/,
-  loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-};
-module.exports.module.loaders[2] = {
-  test: /\.css$/,
-  loader: ExtractTextPlugin.extract('css-loader')
-};
+// // export css to a separate file
+// module.exports.module.rules[1] = {
+//   test: /\.scss$/,
+//   loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+// };
+// module.exports.module.rules[2] = {
+//   test: /\.css$/,
+//   loader: ExtractTextPlugin.extract('css-loader')
+// };
 
-module.exports.plugins.push(
-  new ExtractTextPlugin('main.css')
-);
+// module.exports.plugins.push(
+//   new ExtractTextPlugin('main.css')
+// );
