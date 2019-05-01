@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = require('./webpack.config.js');    // inherit from the main config file
 
-// module.exports.mode = 'development';
+module.exports.mode = 'development';
 
 // disable the hot reload
 module.exports.entry = [
@@ -25,18 +25,13 @@ module.exports.plugins[2] = new HtmlWebpackPlugin({
   cache: true
 });
 
-// // export css to a separate file
-// module.exports.module.rules[1] = {
-//   test: /\.scss$/,
-//   loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-// };
-// module.exports.module.rules[2] = {
-//   test: /\.css$/,
-//   loader: ExtractTextPlugin.extract('css-loader')
-// };
-
 // module.exports.plugins.push(
-//   new ExtractTextPlugin('main.css')
+//   new MiniCssExtractPlugin({
+//     // Options similar to the same options in webpackOptions.output
+//     // both options are optional
+//     filename: '[name].css',
+//     chunkFilename: '[id].css',
+//   }),
 // );
 
 // Note: there is a known issue with html-webpack-plugin regarding the generated link tag not including the type="text/css" metadata:

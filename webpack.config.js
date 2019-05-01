@@ -2,11 +2,15 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+// https://webpack.js.org/guides/getting-started
 // http://gaearon.github.io/react-hot-loader/getstarted/
-// https://github.com/jtangelder/sass-loader
+// https://quantizd.com/webpack-4-extract-css-with-mini-css-extract-plugin/
+// https://github.com/webpack-contrib/mini-css-extract-plugin
 
 module.exports = {
+  mode: 'development',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:7070',
     'webpack/hot/only-dev-server',
@@ -38,12 +42,12 @@ module.exports = {
         loaders: ['react-hot-loader/webpack', 'babel-loader', 'eslint-loader'],
       },
       {
-        test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader'],
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+              MiniCssExtractPlugin.loader,
+              { loader: 'css-loader', options: { url: false, sourceMap: true } },
+              { loader: 'sass-loader', options: { sourceMap: true } }
+          ],
       },
       {
         test: /\.ejs$/,
@@ -80,6 +84,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Hot template',
       template: '!!html-loader!src/assets/index.ejs',
-    })
+    }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
   ],
 };

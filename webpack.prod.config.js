@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = require('./webpack.config.js');    // inherit from the main config file
 
-// module.exports.mode = 'production';
+module.exports.mode = 'production';
 
 // disable the hot reload
 module.exports.entry = [
@@ -25,16 +25,6 @@ module.exports.plugins.push(
   })
 );
 
-// // compress the js file
-// module.exports.plugins.push(
-//   new webpack.optimize.UglifyJsPlugin({
-//     comments: false,
-//     compressor: {
-//       warnings: false
-//     }
-//   })
-// );
-
 // export the html template from src/assets dir
 module.exports.plugins[2] = new HtmlWebpackPlugin({
   title: 'Prod template',
@@ -44,16 +34,11 @@ module.exports.plugins[2] = new HtmlWebpackPlugin({
   cache: true
 });
 
-// // export css to a separate file
-// module.exports.module.rules[1] = {
-//   test: /\.scss$/,
-//   loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-// };
-// module.exports.module.rules[2] = {
-//   test: /\.css$/,
-//   loader: ExtractTextPlugin.extract('css-loader')
-// };
-
 // module.exports.plugins.push(
-//   new ExtractTextPlugin('main.css')
+//   new MiniCssExtractPlugin({
+//     // Options similar to the same options in webpackOptions.output
+//     // both options are optional
+//     filename: '[name].css',
+//     chunkFilename: '[id].css',
+//   }),
 // );
