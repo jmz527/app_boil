@@ -14,7 +14,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:7070',
     'webpack/hot/only-dev-server',
-    'babel-polyfill',
+    '@babel/polyfill',
     __dirname + '/src/index.js'
   ],
   output: {

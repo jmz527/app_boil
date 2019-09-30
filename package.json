@@ -13,10 +13,12 @@
     "start": "node server.js"
   },
   "babel": {
+    "plugins": [
+      "react-hot-loader/babel"
+    ],
     "presets": [
-      "es2015",
-      "react",
-      "stage-3"
+      "@babel/preset-env",
+      "@babel/preset-react"
     ]
   },
   "author": "James Rutledge",
@@ -28,17 +30,14 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
-    "babel-register": "^6.26.0",
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.6.2",
+    "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^0.28.7",
     "ejs": "^2.6.1",

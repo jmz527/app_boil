@@ -20,7 +20,7 @@ describe('topics reducer', () => {
     expect(reducer(undefined, {})).toEqual(initialState);
   });
 
-  it('should store the topics upon successful fetching', () => {
+  it.skip('should store the topics upon successful fetching', () => {
     const topics = data.topics.map((topic) => {
       return utilities.clone(topic);
     });
