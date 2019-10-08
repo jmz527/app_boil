@@ -10,7 +10,7 @@
     "lint": "./node_modules/.bin/eslint src/**/*.js --ignore-pattern node_modules/",
     "test": "jest --verbose",
     "test-watch": "jest --verbose --watch",
-    "start": "node server.js"
+    "serve": "node server.js"
   },
   "babel": {
     "plugins": [
