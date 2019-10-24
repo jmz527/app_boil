@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // Custom Imports
 import Aux from '~/hoc/Aux';
-import TopicsList from './TopicsList';
+import TopicsList from '~/components/TopicsList';
 
 // Style Imports
 // import './index.scss';

@@ -4,7 +4,7 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Custom Imports
-import TopicItem from './TopicItem';
+import TopicItem from '~/components/TopicItem';
 
 // Style Imports
 // import './index.scss';
