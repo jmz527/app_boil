@@ -5,7 +5,7 @@ import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 // Custom Imports
-import LoginPage from '~/components/pages/login';
+import LoginPage from '~/pages/login';
 
 configure({adapter: new Adapter()});
 

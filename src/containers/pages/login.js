@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 // Custom Imports
-import LoginPage from '~/components/pages/login';
+import LoginPage from '~/pages/login';
 import * as actionCreators from '~/store/actions';
 
 const mapStateToProps = (state) => {

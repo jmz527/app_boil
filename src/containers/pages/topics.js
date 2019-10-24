@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 // Custom Imports
-import TopicsPage from '~/components/pages/topics';
+import TopicsPage from '~/pages/topics';
 import * as actionCreators from '~/store/actions';
 
 const mapStateToProps = (state) => {

@@ -8,9 +8,9 @@ import Layout from '~/hoc/Layout';
 import PrivateRoute from '~/hoc/PrivateRoute';
 
 // Page Imports
-import HomePage from '~/components/pages/home';
-import AboutPage from '~/components/pages/about';
-import PrivatePage from '~/components/pages/private';
+import HomePage from '~/pages/home';
+import AboutPage from '~/pages/about';
+import PrivatePage from '~/pages/private';
 
 // Container Imports
 import LoginPage from '~/containers/pages/login';

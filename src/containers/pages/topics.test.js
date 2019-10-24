@@ -5,8 +5,8 @@ import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 // Custom Imports
-import TopicsPage from '~/components/pages/topics';
-import { TopicsListPlaceholder } from '~/components/pages/topics';
+import TopicsPage from '~/pages/topics';
+import { TopicsListPlaceholder } from '~/pages/topics';
 
 configure({adapter: new Adapter()});
 
