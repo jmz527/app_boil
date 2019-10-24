@@ -19,7 +19,7 @@ export const toCamelCase = (str) => {
     return '';
   }
   let newStr = str
-    .replace(/[\[\]]/g, '_')
+    .replace(/[[\]]/g, '_')
     .replace(/[^A-z0-9]+/g, '_')
     .replace(/[-_]+([A-z])/g, (g) => g[1].toUpperCase());
   newStr = newStr.charAt(0).toLowerCase() + newStr.slice(1);
@@ -186,7 +186,7 @@ export const unflattenJson = (data) => {
   'use strict';
   if (Object(data) !== data || Array.isArray(data))
     return data;
-  let regex = /\.?([^.\[\]]+)|\[(\d+)]/g,
+  let regex = /\.?([^.[\]]+)|\[(\d+)]/g,
     resultholder = {};
   for (let p in data) {
     let cur = resultholder,
