@@ -20,7 +20,7 @@ describe('topics reducer', () => {
     expect(reducer(undefined, {})).toEqual(initialState);
   });
 
-  it.skip('should store the topics upon successful fetching', () => {
+  it('should store the topics upon successful fetching', () => {
     const topics = data.topics.map((topic) => {
       return utilities.clone(topic);
     });
@@ -31,7 +31,7 @@ describe('topics reducer', () => {
     })).toEqual({
       ...initialState,
       ids: utilities.objectsArrayToIdsArray(topics),
-      objects: utilities.objectsArrayToObjectsHash(topics)
+      objects: utilities.objectsArrayToObjectsHash(topics, 'id')
     });
   });
 });
