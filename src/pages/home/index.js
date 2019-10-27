@@ -9,7 +9,7 @@ import ErrorBoundary from '~/components/ErrorBoundary';
 // Style Imports
 // import './index.scss';
 
-const homePage = () => (
+const HomePage = () => (
   <div className='homePage'>
     <h2>Home</h2>
 
@@ -28,4 +28,4 @@ const homePage = () => (
   </div>
 );
 
-export default withRouter(homePage);
+export default withRouter(HomePage);

@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 // Style Imports
 // import './index.scss';
 
-const aboutPage = () => (
+const AboutPage = () => (
   <div className='aboutPage'>
     <h2>About</h2>
     <p>
@@ -18,4 +18,4 @@ const aboutPage = () => (
   </div>
 );
 
-export default withRouter(aboutPage);
+export default withRouter(AboutPage);
