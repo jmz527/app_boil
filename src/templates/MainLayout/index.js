@@ -10,8 +10,8 @@ import UserBar from '~/components/UserBar';
 // Style
 import './index.scss';
 
-const layout = (props) => (
-  <Aux className='layout'>
+const MainLayout = (props) => (
+  <Aux className='mainLayout'>
     <nav className='navigation'>
       <Navigation />
     </nav>
@@ -23,8 +23,8 @@ const layout = (props) => (
     </main>
   </Aux>
 );
-layout.propTypes = {
+MainLayout.propTypes = {
   children: PropTypes.object
 };
 
-export default layout;
+export default MainLayout;
