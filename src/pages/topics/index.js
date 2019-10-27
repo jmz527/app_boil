@@ -1,11 +1,13 @@
 // Main Imports
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // Custom Imports
 import Aux from '~/components/Aux';
 import TopicsList from '~/components/TopicsList';
+import * as actionCreators from '~/store/actions';
 
 // Style Imports
 // import './index.scss';
@@ -64,4 +66,17 @@ TopicsPage.propTypes = {
   }))
 };
 
-export default withRouter(TopicsPage);
+const mapStateToProps = (state) => {
+  return {
+    fetching: state.ui.fetching,
+    topics: state.topics.ids.map(id => state.topics.objects[id])
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onFetchTopics: () => actionCreators.fetchTopicsRequest(dispatch)
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TopicsPage));

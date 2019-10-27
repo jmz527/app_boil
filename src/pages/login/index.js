@@ -1,12 +1,16 @@
 // Main Imports
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+// Custom Imports
+import * as actionCreators from '~/store/actions';
 
 // Style Imports
 // import './index.scss';
 
-const loginPage = (props) => {
+const LoginPage = (props) => {
   const { from } = props.location.state || { from: { pathname: '/' } };
 
   if (props.loginSuccess) {
@@ -23,7 +27,7 @@ const loginPage = (props) => {
     </div>
   );
 };
-loginPage.propTypes = {
+LoginPage.propTypes = {
   loginSuccess: PropTypes.bool,
   currentUser: PropTypes.object,
   location: PropTypes.object,
@@ -31,4 +35,20 @@ loginPage.propTypes = {
   authorizeUserFailure: PropTypes.func
 };
 
-export default loginPage;
+const mapStateToProps = (state) => {
+  return {
+    loginSuccess: state.user.loginSuccess,
+    currentUser: state.user.currentUser
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    authorizeUserSuccess: () => dispatch(actionCreators.authorizeUserSuccess()),
+    authorizeUserFailure: () => dispatch(actionCreators.authorizeUserFailure())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+
+

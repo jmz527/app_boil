@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 // Custom Imports
 import store from './store';
-import App from './containers/app.js';
+import App from './components/App';
 import ErrorBoundary from '~/components/ErrorBoundary';
 
 // Style Imports
