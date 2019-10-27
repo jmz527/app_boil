@@ -1,13 +1,10 @@
 // Main Imports
 import React from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 // Custom Imports
-import Layout from '~/components/Layout';
+import Layout from '~/templates/Layout';
 import PrivateRoute from '~/components/PrivateRoute';
-import * as actionCreators from '~/store/actions';
 
 // Page Imports
 import HomePage from '~/pages/home';
@@ -19,9 +16,9 @@ import PrivatePage from '~/pages/private';
 // Style Imports
 // import './index.scss';
 
-const App = (props) => (
+const App = () => (
   <div className='app'>
-    <Layout {...props}>
+    <Layout>
       <Switch>
         <Route exact path='/' component={HomePage}/>
         <Route path='/about' component={AboutPage}/>
@@ -32,25 +29,5 @@ const App = (props) => (
     </Layout>
   </div>
 );
-App.propTypes = {
-  loginSuccess: PropTypes.bool,
-  currentUser: PropTypes.object,
-  authorizeUserSuccess: PropTypes.func,
-  authorizeUserFailure: PropTypes.func
-};
 
-const mapStateToProps = (state) => {
-  return {
-    loginSuccess: state.user.loginSuccess,
-    currentUser: state.user.currentUser
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    authorizeUserSuccess: () => dispatch(actionCreators.authorizeUserSuccess()),
-    authorizeUserFailure: () => dispatch(actionCreators.authorizeUserFailure())
-  };
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(App);

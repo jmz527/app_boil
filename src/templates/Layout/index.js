@@ -16,7 +16,7 @@ const layout = (props) => (
       <Navigation />
     </nav>
     <hr />
-    <UserBar {...props} />
+    <UserBar />
     <hr />
     <main className='main'>
       { props.children }
@@ -24,11 +24,7 @@ const layout = (props) => (
   </Aux>
 );
 layout.propTypes = {
-  children: PropTypes.object,
-  loginSuccess: PropTypes.bool,
-  currentUser: PropTypes.object,
-  authorizeUserSuccess: PropTypes.func,
-  authorizeUserFailure: PropTypes.func
+  children: PropTypes.object
 };
 
 export default layout;

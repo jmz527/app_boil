@@ -1,11 +1,15 @@
 // Main Imports
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+// Custom Imports
+import * as actionCreators from '~/store/actions';
 
 // Style Imports
 import './index.scss';
 
-const userBar = (props) => {
+const UserBar = (props) => {
   const loginButton = <button onClick={() => props.authorizeUserSuccess()}>login</button>;
   const logoutButton = <button onClick={() => props.authorizeUserFailure()}>logout</button>;
 
@@ -21,11 +25,26 @@ const userBar = (props) => {
     </div>
   );
 };
-userBar.propTypes = {
+UserBar.propTypes = {
   loginSuccess: PropTypes.bool,
   currentUser: PropTypes.object,
   authorizeUserSuccess: PropTypes.func,
   authorizeUserFailure: PropTypes.func
 };
 
-export default userBar;
+const mapStateToProps = (state) => {
+  return {
+    loginSuccess: state.user.loginSuccess,
+    currentUser: state.user.currentUser
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    authorizeUserSuccess: () => dispatch(actionCreators.authorizeUserSuccess()),
+    authorizeUserFailure: () => dispatch(actionCreators.authorizeUserFailure())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserBar);
+
