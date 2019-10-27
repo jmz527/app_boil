@@ -1,6 +1,5 @@
 // Main Imports
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 // Style Imports
 // import './index.scss';
@@ -12,4 +11,4 @@ const PrivatePage = () => (
   </div>
 );
 
-export default withRouter(PrivatePage);
+export default PrivatePage;

@@ -1,6 +1,5 @@
 // Main Imports
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 // Style Imports
 // import './index.scss';
@@ -18,4 +17,4 @@ const AboutPage = () => (
   </div>
 );
 
-export default withRouter(AboutPage);
+export default AboutPage;

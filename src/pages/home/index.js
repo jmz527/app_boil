@@ -1,6 +1,5 @@
 // Main Imports
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 // Custom Imports
 import BuggyCounter from '~/components/BuggyCounter';
@@ -39,4 +38,4 @@ const HomePage = () => (
   </div>
 );
 
-export default withRouter(HomePage);
+export default HomePage;
