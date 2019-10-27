@@ -1,27 +1,28 @@
 // Main Imports
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { configure, mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 // Custom Imports
-import TopicsPage from '~/pages/topics';
+import { TopicsPage } from '~/pages/topics';
 import { TopicsListPlaceholder } from '~/pages/topics';
 
-configure({adapter: new Adapter()});
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('<TopicsPage />', () => {
-  let wrapper;
+  it('should render a placeholder when fetching topics', () => {
+    const props = {
+      fetching: true,
+      onFetchTopics: () => {},
+      topics: []
+    };
 
-  beforeEach(() => {
-    wrapper = mount(
+    const wrapper = mount(
       <MemoryRouter>
-        <TopicsPage fetching={true} onFetchTopics={() => {}} topics={[]} />
+        <TopicsPage {...props} />
       </MemoryRouter>
     );
-  });
-
-  it('should render a placeholder when fetching topics', () => {
     expect(wrapper.find(TopicsListPlaceholder)).toHaveLength(1);
   });
 });

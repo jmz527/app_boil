@@ -18,7 +18,7 @@ export const TopicsListPlaceholder = () => (
   </div>
 );
 
-class TopicsPage extends Component {
+export class TopicsPage extends Component {
 
   // Lifecycle hooks
   componentDidMount() {

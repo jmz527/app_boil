@@ -10,7 +10,7 @@ import * as actionCreators from '~/store/actions';
 // Style Imports
 // import './index.scss';
 
-const LoginPage = (props) => {
+export const LoginPage = (props) => {
   const { from } = props.location.state || { from: { pathname: '/' } };
 
   if (props.loginSuccess) {
@@ -50,5 +50,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
-
-
