@@ -10,6 +10,7 @@
   "globals": {
     "process": true
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -29,6 +30,7 @@
     "no-control-regex": 1,
     "no-extra-semi": 1,
     "no-unreachable": 1,
+    "no-prototype-builtins": 1,
     "indent": [
       "error",
       2,
