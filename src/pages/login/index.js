@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // Custom Imports
+import ReturnButton from '~/components/ReturnButton';
 import * as actionCreators from '~/store/actions';
 
 // Style Imports
@@ -24,6 +25,7 @@ export const LoginPage = (props) => {
         <p>You must log in to view the page at {from.pathname}</p>
         <button disabled={props.loginSuccess} onClick={() => props.authorizeUserSuccess()}>Log in</button>
       </div>
+      <ReturnButton />
     </div>
   );
 };
