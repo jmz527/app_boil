@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const cleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -67,7 +67,7 @@ module.exports = {
     contentBase: __dirname + '/public',
   },
   plugins: [
-    new CleanWebpackPlugin({
+    new cleanWebpackPlugin.CleanWebpackPlugin({
       root: __dirname + '/build',
       verbose: true,
       dry: false, // true for simulation
