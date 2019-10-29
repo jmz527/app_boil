@@ -11,16 +11,18 @@ import { toTitleCase } from '~/utilities';
 import './index.scss';
 
 const Breadcrumbs = ({ location: { pathname } }) => {
-  var here = pathname.split('/').slice(1);
+  let parts = [{ 'text': 'Home', 'link': '/' }];
 
-  var parts = [{ 'text': 'Home', 'link': '/' }];
+  if (pathname !== '/') {
+    const here = pathname.split('/').slice(1);
 
-  for( var i = 0; i < here.length; i++ ) {
-    var part = here[i];
-    var text = toTitleCase(part);
-    var link = '/' + here.slice( 0, i + 1 ).join('/');
-    parts.push({ 'text': text, 'link': link });
-  };
+    for( let i = 0; i < here.length; i++ ) {
+      let part = here[i];
+      let text = toTitleCase(part);
+      let link = '/' + here.slice( 0, i + 1 ).join('/');
+      parts.push({ 'text': text, 'link': link });
+    };
+  }
 
   return (
     <ul className="breadcrumbs">
