@@ -1,0 +1,23 @@
+.breadcrumbs {
+	li {
+		display: inline-block;
+		margin: 0;
+	}
+
+	li:last-child {
+		a {
+			color: inherit;
+			cursor: inherit;
+			text-decoration: none;
+			pointer-events: none;
+		}
+	}
+
+	li::after {
+		content: "/";
+		margin: 0 4px;
+	}
+	li:last-child::after {
+		content: none;
+	}
+}

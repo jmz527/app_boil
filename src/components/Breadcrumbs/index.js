@@ -7,6 +7,9 @@ import PropTypes from 'prop-types';
 // Custom Imports
 import { toTitleCase } from '~/utilities';
 
+// Style Imports
+import './index.scss';
+
 const Breadcrumbs = ({ location: { pathname } }) => {
   var here = pathname.split('/').slice(1);
 
@@ -20,7 +23,7 @@ const Breadcrumbs = ({ location: { pathname } }) => {
   };
 
   return (
-    <ul>
+    <ul className="breadcrumbs">
       { parts.map((part, idx) => {
         return <li key={idx}><Link to={part.link}>{part.text}</Link></li>;
       })}
