@@ -5,6 +5,7 @@ import React from 'react';
 import BuggyCounter from '~/components/BuggyCounter';
 import ErrorBoundary from '~/components/ErrorBoundary';
 import withConditional from '~/components/WithConditional';
+import StarRatio from '~/components/StarRatio';
 
 // Style Imports
 // import './index.scss';
@@ -34,6 +35,8 @@ const HomePage = () => (
     </div>
 
     <ConditionalComponent condition={3 < 4} />
+
+    <StarRatio starCount={5} rating={3.6} fill="#ccc" />
 
   </div>
 );

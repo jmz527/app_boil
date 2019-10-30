@@ -1,0 +1,18 @@
+/* The following css coresponds w/ the 'star-ratio' component */
+.star-ratio {
+  .star--half { fill:url(#halfGradient); } /* Half-filled star using gradient (CSS gradient does not work here) */
+  .star--empty { fill: none; }
+  .star {
+    height: 1.3em;
+    fill: #ccc;
+    stroke: #000;
+    stroke-width: 3;
+  }
+  .star-source {
+    position: absolute;
+    width: 0;
+    top: 0;
+    fill: #ccc;
+  }
+}
+
