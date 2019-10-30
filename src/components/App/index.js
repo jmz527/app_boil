@@ -1,7 +1,6 @@
 // Main Imports
 import React from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 // Custom Imports
 import MainLayout from '~/templates/MainLayout';
@@ -12,17 +11,6 @@ import * as pages from '~/pages';
 
 // Style Imports
 // import './index.scss';
-
-const NoMatch = ({ location }) => (
-  <div>
-    <h3>
-      No match for <code>{location.pathname}</code>
-    </h3>
-  </div>
-);
-NoMatch.propTypes = {
-  location: PropTypes.string
-};
 
 const App = () => (
   <div className='app'>
@@ -35,7 +23,7 @@ const App = () => (
             <Route path='/about' component={pages.AboutPage}/>
             <Route path='/topics' component={pages.TopicsPage}/>
             <PrivateRoute path='/private' component={pages.PrivatePage}/>
-            <Route component={NoMatch} />
+            <Route component={pages.NoMatchPage} />
           </Switch>
         </MainLayout>
       </Route>
