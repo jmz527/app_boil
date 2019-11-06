@@ -17,27 +17,9 @@ system.
 
 ### Prerequisites
 
-We use Yarn to manage dependencies and run scripts.
-
-First, you need to make sure that you have Yarn installed on your system:
-
-```
-yarn --version
-```
-
-If you don't have Yarn installed, you will need to install it. Now, there are a growing number of 
-different ways to install Yarn, but we recommend that you install it through the Homebrew package 
-manager. This will also install Node.js if it is not already installed:
-
-```
-brew install yarn
-```
-
-If you use nvm or similar, you should exclude installing Node.js so that nvm's version of Node.js 
-is used:
-
-```
-brew install yarn --without-node
+```sh
+docker build -t app_boil .
+docker run --rm -it -p 8080:8080 app_boil
 ```
 
 ### Installing
@@ -47,13 +29,13 @@ First, clone this repository on your local machine and then install the depedenc
 ```
 git clone git@github.com:jmz527/app_boil.git
 cd app_boil/
-yarn install
+npm install
 ```
 
 To start developing locally, run:
 
 ```
-yarn start-dev
+npm run start-dev
 ```
 
 and go to [http://localhost:8080](http://localhost:8080).
@@ -63,7 +45,7 @@ and go to [http://localhost:8080](http://localhost:8080).
 To run the automated tests:
 
 ```
-yarn test
+npm run test
 ```
 
 ## Built with
@@ -81,9 +63,8 @@ yarn test
 
 ## Authors
 
-* **James Rutledge** - *Initial work* - [James Rutledge](https://github.com/jmz527)
+* **James Rutledge** - [James Rutledge](https://github.com/jmz527)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
