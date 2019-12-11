@@ -31,25 +31,10 @@
     "no-extra-semi": 1,
     "no-unreachable": 1,
     "no-prototype-builtins": 1,
-    "indent": [
-      "error",
-      2,
-      {
-        "SwitchCase": 1
-      }
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
+    "indent": [ "warn", 1, { "SwitchCase": 1 } ],
+    "linebreak-style": [ "error", "unix" ],
+    "quotes": [ "error", "single" ],
+    "semi": [ "error", "always" ],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error"
   }
