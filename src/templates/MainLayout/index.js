@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 // Custom Imports
 import Aux from '~/components/Aux';
 import Navigation from '~/components/Navigation';
-import Breadcrumbs from '~/components/Breadcrumbs';
-import UserBar from '~/components/UserBar';
 
 // Style
 import './index.scss';
@@ -16,10 +14,6 @@ const MainLayout = (props) => (
     <nav className='navigation'>
       <Navigation />
     </nav>
-    <hr />
-    <Breadcrumbs />
-    <hr />
-    <UserBar />
     <hr />
     <main className='main'>
       { props.children }

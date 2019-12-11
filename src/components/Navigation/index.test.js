@@ -24,8 +24,8 @@ describe('<Navigation />', () => {
     );
   });
 
-  it('should render 5 <Link />', () => {
-    expect(wrapper.find(Link)).toHaveLength(5);
+  it('should render the correct number of <Link /> items', () => {
+    expect(wrapper.find(Link)).toHaveLength(3);
   });
 
   it('should render a Home <Link />', () => {
@@ -36,7 +36,4 @@ describe('<Navigation />', () => {
     expect(wrapper.find(Link).filter({to: '/about'}).text()).toEqual('About');
   });
 
-  it('should render a Topics <Link />', () => {
-    expect(wrapper.find(Link).filter({to: '/topics'}).text()).toEqual('Topics');
-  });
 });

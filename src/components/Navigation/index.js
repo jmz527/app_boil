@@ -15,13 +15,7 @@ const navigation = () => (
         <Link to='/about'>About</Link>
       </li>
       <li>
-        <Link to='/topics'>Topics</Link>
-      </li>
-      <li>
         <Link to='/private'>Private</Link>
-      </li>
-      <li>
-        <Link to='/login'>Login</Link>
       </li>
     </ul>
   </div>
