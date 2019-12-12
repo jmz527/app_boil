@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // http://gaearon.github.io/react-hot-loader/getstarted/
 // https://quantizd.com/webpack-4-extract-css-with-mini-css-extract-plugin/
 // https://github.com/webpack-contrib/mini-css-extract-plugin
+// https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1
 
 module.exports = {
   mode: 'development',
