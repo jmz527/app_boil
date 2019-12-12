@@ -97,8 +97,8 @@ deploy-prod.sh
 
 # lock files
 # comment out if you want semver for sub-deps
-package-lock.json
-yarn.lock
+# package-lock.json
+# yarn.lock
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
