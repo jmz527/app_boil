@@ -1,9 +1,10 @@
 // Main Imports
 import React from 'react';
-import { withRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // Custom Imports
 import MainLayout from '~/templates/MainLayout';
+import ErrorBoundary from '~/components/ErrorBoundary';
 // import PrivateRoute from '~/components/PrivateRoute';
 
 // Page Imports
@@ -14,20 +15,24 @@ import * as pages from '~/pages';
 
 const App = () => (
   <div className='app'>
-    <Switch>
-      {/*<Route path='/login' component={pages.LoginPage}/>*/}
-      <Route path="/">
-        <MainLayout>
-          <Switch>
-            <Route exact path='/' component={pages.HomePage}/>
-            <Route path='/about' component={pages.AboutPage}/>
-            <Route path='/private' component={pages.PrivatePage}/>
-            <Route component={pages.NoMatchPage} />
-          </Switch>
-        </MainLayout>
-      </Route>
-    </Switch>
+    <BrowserRouter>
+      <ErrorBoundary>
+        <Switch>
+          {/*<Route path='/login' component={pages.LoginPage}/>*/}
+          <Route path="/">
+            <MainLayout>
+              <Switch>
+                <Route exact path='/' component={pages.HomePage}/>
+                <Route path='/about' component={pages.AboutPage}/>
+                <Route path='/private' component={pages.PrivatePage}/>
+                <Route component={pages.NoMatchPage} />
+              </Switch>
+            </MainLayout>
+          </Route>
+        </Switch>
+      </ErrorBoundary>
+    </BrowserRouter>
   </div>
 );
 
-export default withRouter(App);
+export default App;
