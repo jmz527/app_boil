@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,12 +9,12 @@ module.exports.mode = 'production';
 // disable the hot reload
 module.exports.entry = [
   '@babel/polyfill',
-  __dirname + '/src/index.js'
+  path.join(__dirname, '/src/index.js'),
 ];
 
 // switch the devServer path
 module.exports.devServer = {
-  contentBase: __dirname + '/build',
+  static: path.join(__dirname, '/build'),
 };
 
 // production env

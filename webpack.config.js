@@ -15,10 +15,10 @@ module.exports = {
     'webpack-dev-server/client?http://0.0.0.0:7070',
     'webpack/hot/only-dev-server',
     '@babel/polyfill',
-    __dirname + '/src/index.js'
+    path.join(__dirname, '/src/index.js'),
   ],
   output: {
-    path: __dirname + '/build',
+    path: path.join(__dirname, '/build'),
     publicPath: '/',
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
@@ -29,17 +29,24 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: ['.js', '.json'],
+    extensions: ['.js', '.jsx', '.json'],
     alias: {
       '~': path.resolve('src/')
     },
+    fallback: {
+      fs: false
+    }
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        loaders: ['react-hot-loader/webpack', 'babel-loader', 'eslint-loader'],
+        use: [
+          { loader: 'react-hot-loader/webpack' },
+          { loader: 'babel-loader' },
+          { loader: 'eslint-loader' }
+        ],
       },
       {
           test: /\.(sa|sc|c)ss$/,
@@ -51,24 +58,23 @@ module.exports = {
       },
       {
         test: /\.ejs$/,
-        loader: 'ejs-loader',
-        query: {
-          variable: 'data',
-          interpolate : '\\{\\{(.+?)\\}\\}',
-          evaluate : '\\[\\[(.+?)\\]\\]'
-        }
+        use: {
+          loader: 'ejs-loader',
+          options: {
+            variable: 'data',
+            interpolate : '\\{\\{(.+?)\\}\\}',
+            evaluate : '\\[\\[(.+?)\\]\\]'
+          }
+        },
       },
     ]
   },
-  node: {
-    fs: 'empty'
-  },
   devServer: {
-    contentBase: __dirname + '/public',
+    static: path.join(__dirname, '/public'),
   },
   plugins: [
     new cleanWebpackPlugin.CleanWebpackPlugin({
-      root: __dirname + '/build',
+      root: path.join(__dirname, '/build'),
       verbose: true,
       dry: false, // true for simulation
     }),

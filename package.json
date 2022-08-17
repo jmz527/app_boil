@@ -4,9 +4,9 @@
   "description": "basic react redux boilerplate",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 7070 --open",
+    "start-dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.dev.config.js --hot --history-api-fallback --host 0.0.0.0 --port 7070",
     "build-dev": "webpack --config webpack.dev.config.js",
-    "build-prod": "webpack -p --config webpack.prod.config.js",
+    "build-prod": "webpack --config webpack.prod.config.js",
     "lint": "./node_modules/.bin/eslint src/**/*.js --ignore-pattern node_modules/",
     "test": "jest --verbose",
     "test-watch": "jest --verbose --watch",

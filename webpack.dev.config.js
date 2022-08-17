@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -13,7 +14,7 @@ module.exports.entry = [
 
 // switch the devServer path
 module.exports.devServer = {
-  contentBase: __dirname + '/build',
+  static: path.join(__dirname, '/build'),
 };
 
 // export the html template from src/assets dir
