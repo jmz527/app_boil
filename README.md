@@ -19,7 +19,7 @@ system.
 
 ```sh
 docker build -t app_boil .
-docker run --rm -it -p 8080:8080 app_boil
+docker run --rm -it -p 8080:80 app_boil
 ```
 
 ### Installing
