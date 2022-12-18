@@ -1,4 +1,4 @@
-FROM node:12.14.1-alpine
+FROM node:12.22.11-alpine
 
 RUN npm i -g npm@8.5.0
 
