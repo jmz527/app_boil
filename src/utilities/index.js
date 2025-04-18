@@ -36,7 +36,7 @@ export const camelToLabelCase = str => {
 
 // checks if an object's prop exists and is of a given type
 export const propCheck = (obj, prop, type) => {
-  return obj.hasOwnProperty(prop) && typeof obj[prop] === type;
+  return Object.hasOwn(obj, prop) && typeof obj[prop] === type;
 };
 
 export const isEmptyObj = (obj) => Object.keys(obj).length === 0;
@@ -192,7 +192,7 @@ export const unflattenJson = (data) => {
     let cur = resultholder,
       prop = '',
       m;
-    while (m = regex.exec(p)) {
+    while (m = regex.exec(p)) { // eslint-disable-line no-cond-assign
       cur = cur[prop] || (cur[prop] = (m[2] ? [] : {}));
       prop = m[2] || m[1];
     }
@@ -211,7 +211,7 @@ export const generateUUID = () => {
 // STRING NORMALIZATION
 // https://stackoverflow.com/questions/7744912/making-a-javascript-string-sql-friendly
 export const escapeStr = (val) => {
-  val = val.replace(/[\0\n\r\b\t\\'"\x1a]/g, function (s) {
+  val = val.replace(/[\0\n\r\b\t\\'"\x1a]/g, function (s) { // eslint-disable-line no-control-regex
     switch (s) {
       case '\0':
         return '\\0';

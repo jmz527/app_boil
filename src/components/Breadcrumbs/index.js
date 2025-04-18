@@ -21,7 +21,7 @@ const Breadcrumbs = ({ location: { pathname } }) => {
       let text = toTitleCase(part);
       let link = '/' + here.slice( 0, i + 1 ).join('/');
       parts.push({ 'text': text, 'link': link });
-    };
+    }
   }
 
   return (

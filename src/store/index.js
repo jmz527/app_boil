@@ -15,7 +15,7 @@ const root = combineReducers({
 });
 
 const logger = createLogger({
-  collapsed: (getState, action) => (action.hasOwnProperty('type') && action.type.includes('@@redux-form'))
+  collapsed: (getState, action) => (Object.hasOwn(action, 'type') && action.type.includes('@@redux-form'))
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
